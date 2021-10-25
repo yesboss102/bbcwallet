@@ -212,8 +212,8 @@ elseif (UNIX)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11 -maes -D_DARWIN_C_SOURCE")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa -framework OpenGL -framework CoreFoundation -framework Carbon -framework IOKit -L/usr/lib")
 
-    set(MACOSX_BUNDLE_ICON_FILE bbcwallet.icns)
-    set(APPLICATION_ICON src/images/bbcwallet.icns)
+    set(MACOSX_BUNDLE_ICON_FILE cryptonote.icns)
+    set(APPLICATION_ICON src/images/cryptonote.icns)
     set_source_files_properties(${APPLICATION_ICON} PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
 
     set(BUILD_PLATFORM MACOSX_BUNDLE)
@@ -228,8 +228,8 @@ elseif (UNIX)
   endif (APPLE)
 endif ()
 
-include_directories(bbcwallet/src/Platform/${PLATFORM_DIR})
-file(GLOB PLATFORM_SOURCES bbcwallet/src/Platform/${PLATFORM_DIR}/System/*)
+include_directories(./src/Platform/${PLATFORM_DIR})
+file(GLOB PLATFORM_SOURCES ./src/Platform/${PLATFORM_DIR}/System/*)
 set(CRYPTONOTE_SOURCES ${CRYPTONOTE_SOURCES} ${PLATFORM_SOURCES})
 
 add_library(${CRYPTONOTE_LIB} STATIC ${CRYPTONOTE_SOURCES})

@@ -34,8 +34,8 @@ endif ()
 include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
-set(VERSION "")
-configure_file("~/bbcwallet/src/version.h.in" "version.h")
+set(VERSION "1")
+
 configure_file("src/CryptoNoteWalletConfig.h.in" "CryptoNoteWalletConfig.h")
 
 add_definitions(-DGIT_REVISION=\"${GIT_REVISION}\")
